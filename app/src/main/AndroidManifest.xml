@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
-            android:name=".activity_issue_invoice"
+
+            android:name=".UserAccount"
+                  
             android:exported="true" />
         <activity
             android:name=".ViewInvoice"
@@ -29,7 +31,8 @@
             android:exported="true" />
         <activity
             android:name=".Login"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.SecurityServiceAndroidAppNoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
