@@ -18,8 +18,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClicking(View view){
 
-        Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
+        int id = view.getId();
+
+        switch(id)
+        {
+            case R.id.signin_btn:
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
+                break;
+            case R.id.sites_btn:
+                Intent intent2 = new Intent(this, Addsites.class);
+                startActivity(intent2);
+                break;
+        }
+
+
     }
 
 }
