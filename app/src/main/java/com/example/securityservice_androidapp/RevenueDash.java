@@ -6,14 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.zip.Inflater;
+public class RevenueDash extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_revenue_dash);
+
+
+
     }
 
     public void onClicking(View view){
@@ -22,22 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
         switch(id)
         {
-            case R.id.signin_btn:
-                Intent intent = new Intent(this, Login.class);
+            case R.id.btnIssueInvoice:
+                Intent intent = new Intent(this, issueInvoice.class);
                 startActivity(intent);
                 break;
-            case R.id.sites_btn:
-                Intent intent2 = new Intent(this, Addsites.class);
+               case R.id.btnViewInvoice:
+               Intent intent2 = new Intent(this, ViewInvoice.class);
                 startActivity(intent2);
                 break;
-            case R.id.invoicePage:
-                Intent intent3 = new Intent(this, RevenueDash.class);
-                startActivity(intent3);
-                break;
-
         }
 
 
     }
-
 }
