@@ -13,6 +13,18 @@
             android:name=".UserAccount"
             android:exported="true" />
         <activity
+            android:name=".ViewInvoice"
+            android:exported="true" />
+        <activity
+            android:name=".RevenueDash"
+            android:exported="true" />
+        <activity
+            android:name=".Adminhome"
+            android:exported="true" />
+        <activity
+            android:name=".issueInvoice"
+            android:exported="true" />
+        <activity
             android:name=".Addsites"
             android:exported="true" />
         <activity
