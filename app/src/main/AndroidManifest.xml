@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
-            android:name=".Adminpage"
+            android:name=".ViewInvoice"
+            android:exported="true" />
+        <activity
+            android:name=".RevenueDash"
+            android:exported="true" />
+        <activity
+            android:name=".Adminhome"
+            android:exported="true" />
+        <activity
+            android:name=".issueInvoice"
             android:exported="true" />
         <activity
             android:name=".Addsites"

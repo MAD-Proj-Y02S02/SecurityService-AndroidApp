@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Adminpage extends AppCompatActivity {
+public class issueInvoice extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adminpage);
+        setContentView(R.layout.activity_issue_invoice);
     }
 }
