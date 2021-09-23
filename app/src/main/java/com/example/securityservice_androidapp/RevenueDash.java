@@ -25,7 +25,7 @@ public class RevenueDash extends AppCompatActivity {
         switch(id)
         {
             case R.id.btnIssueInvoice:
-                Intent intent = new Intent(this, issueInvoice.class);
+                Intent intent = new Intent(this, issueInvoices.class);
                 startActivity(intent);
                 break;
                case R.id.btnViewInvoice:
