@@ -16,6 +16,7 @@
             android:name=".AdminAssignSites"
             android:exported="true" />
         <activity
+
             android:name=".adminHomePage"
             android:exported="true" />
         <activity
