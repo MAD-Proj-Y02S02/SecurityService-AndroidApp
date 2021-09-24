@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,6 +47,13 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+
+
 
 
         logout.setOnClickListener(this);
@@ -68,3 +76,6 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
         }
     }
 }
+
+
+
