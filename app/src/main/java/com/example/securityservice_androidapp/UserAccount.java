@@ -2,6 +2,7 @@ package com.example.securityservice_androidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class UserAccount extends AppCompatActivity implements View.OnClickListener {
 
     TextView welcometext;
-    Button logout;
+    Button logout, myprofile;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
 
@@ -31,6 +32,7 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
 
         welcometext = findViewById(R.id.welcometext);
         logout = findViewById(R.id.logout_btn);
+        myprofile = findViewById(R.id.myprofile_btn);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -63,6 +65,10 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
                 firebaseAuth.signOut();
                 this.finish();
                 break;
+            case R.id.myprofile_btn:
+                Intent intent = new Intent(this, MyProfile.class);
+                startActivity(intent);
+            break;
 
         }
     }
