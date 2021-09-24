@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class issueInvoice extends AppCompatActivity {
+public class issueInvoices extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_issue_invoice);
+        setContentView(R.layout.activity_issue_invoices);
     }
 }
