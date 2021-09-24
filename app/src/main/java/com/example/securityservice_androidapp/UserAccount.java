@@ -47,6 +47,15 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+
+
+
+
         logout.setOnClickListener(this);
 
 
