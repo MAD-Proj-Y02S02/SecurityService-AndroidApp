@@ -27,7 +27,7 @@ public class AdminViewAllGuards extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_view_all_guards);
 
-        recyclerView = findViewById(R.id.recyclerviewguards);
+        recyclerView = findViewById(R.id.viewAllinvoices);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

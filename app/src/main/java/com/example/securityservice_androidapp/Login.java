@@ -59,6 +59,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.signup_btn:
                 handleSignupBtnClick();
                 break;
+
+            case R.id.adminsignin_btn:
+                handleAdminMenuBtnClick();
+                break;
         }
 
     }
@@ -91,6 +95,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     public void handleSignupBtnClick(){
         Intent intent = new Intent(this, Signup.class);
+        startActivity(intent);
+    }
+
+    public void handleAdminMenuBtnClick(){
+        Intent intent = new Intent(this,adminHomePage.class);
         startActivity(intent);
     }
 }

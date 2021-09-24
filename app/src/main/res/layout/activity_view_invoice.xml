@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/TextViewInvoices"
-        android:layout_width="250dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="197dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="36dp"
         android:text="View All Invoices"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
