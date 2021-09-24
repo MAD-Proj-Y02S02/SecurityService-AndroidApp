@@ -7,14 +7,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class UserAccount extends AppCompatActivity implements View.OnClickListener {
 
     TextView welcometext;
     Button logout;
     FirebaseAuth firebaseAuth;
+    FirebaseFirestore fStore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +35,22 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        welcometext.setText("Hi "+user.getEmail()+" !");
+        fStore = FirebaseFirestore.getInstance();
+
+        DocumentReference documentReference = fStore.collection("Security").document(user.getUid());
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                welcometext.setText("hello " + documentSnapshot.getString("fName")+" !");
+            }
+        });
+
+
 
         logout.setOnClickListener(this);
+
+
 
     }
 
