@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Adminpage">
+
+    <TextView
+        android:id="@+id/revenueHeader"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="76dp"
+        android:text="Revenue Management Dashboard"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnIssueInvoice"
+        android:layout_width="295dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="136dp"
+        android:backgroundTint="#2196F3"
+        android:onClick="onClicking"
+        android:text="Issue Invoice"
+        android:textSize="20sp"
+        app:iconTint="#C31F1F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/revenueHeader" />
+
+    <Button
+        android:id="@+id/btnViewInvoice"
+        android:layout_width="295dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="onClicking"
+        android:text="View Invoices"
+        android:textSize="20sp"
+        app:iconTint="#C31F1F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIssueInvoice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

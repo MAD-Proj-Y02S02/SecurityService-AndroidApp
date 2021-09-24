@@ -30,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(this, Addsites.class);
                 startActivity(intent2);
                 break;
+            case R.id.invoicePage:
+                Intent intent3 = new Intent(this, RevenueDash.class);
+                startActivity(intent3);
+                break;
+            case R.id.viewSec_btn:
+                Intent intent4 = new Intent(this, AdminViewAllGuards.class);
+                startActivity(intent4);
+
+
         }
 
 
