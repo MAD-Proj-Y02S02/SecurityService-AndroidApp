@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+            android:name=".MyProfile"
+            android:exported="true" />
+        <activity
+            android:name=".view"
+            android:exported="true" />
+
+        <activity
             android:name=".AdminViewAllGuards"
             android:exported="true" />
         <activity

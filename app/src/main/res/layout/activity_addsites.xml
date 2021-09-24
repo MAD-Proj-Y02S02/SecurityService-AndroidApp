@@ -84,9 +84,39 @@
         app:iconTintMode="add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_site"
-        app:layout_constraintVertical_bias="0.483"
+        app:layout_constraintVertical_bias="0.226"
         app:rippleColor="#1571BA" />
+
+    <Button
+        android:id="@+id/add_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="ADD"
+        app:iconTint="#E60C56"
+        app:iconTintMode="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_site"
+        app:layout_constraintVertical_bias="0.134"
+        app:rippleColor="#1571BA" />
+
+    <Button
+        android:id="@+id/viewallsites_btn"
+        android:layout_width="169dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/lightGreen"
+        android:onClick="onClick"
+        android:text="View All Sites"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_btn2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

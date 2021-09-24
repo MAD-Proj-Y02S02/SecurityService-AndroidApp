@@ -3,6 +3,7 @@ package com.example.securityservice_androidapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Service;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Addsites extends AppCompatActivity  implements View.OnClickListener{
 
     EditText siteName, siteOwner, siteAddress, siteNumber;
-    Button addBtn;
+    Button addBtn,viewallsitesBtn;
 
     Sites obSite;
 
@@ -34,6 +35,7 @@ public class Addsites extends AppCompatActivity  implements View.OnClickListener
         siteAddress = findViewById(R.id.address_site);
 
         addBtn = findViewById(R.id.add_btn);
+        viewallsitesBtn = findViewById(R.id.viewallsites_btn);
 
 
         obSite = new Sites();
@@ -47,6 +49,9 @@ public class Addsites extends AppCompatActivity  implements View.OnClickListener
             case R.id.add_btn:
                 Add();
                 break;
+            case R.id.viewallsites_btn:
+                Intent intent = new Intent(this, view.class);
+                startActivity(intent);
         }
     }
 
