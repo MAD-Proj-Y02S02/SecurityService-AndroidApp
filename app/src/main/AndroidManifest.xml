@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+<<<<<<< HEAD
 
             android:name=".UserAccount"
                   
@@ -24,6 +25,8 @@
             android:name=".Adminhome"
             android:exported="true" />
         <activity
+=======
+>>>>>>> parent of 1e52667 (Adding Security Guards to DB)
             android:name=".Addsites"
             android:exported="true" />
         <activity
@@ -31,8 +34,7 @@
             android:exported="true" />
         <activity
             android:name=".Login"
-            android:exported="true"
-            android:theme="@style/Theme.SecurityServiceAndroidAppNoActionBar"/>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

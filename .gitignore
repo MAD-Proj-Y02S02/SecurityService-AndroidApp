@@ -13,5 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+<<<<<<< HEAD
 .idea/misc.xml
 .idea/deploymentTargetDropDown.xml
+=======
+>>>>>>> parent of 1e52667 (Adding Security Guards to DB)
