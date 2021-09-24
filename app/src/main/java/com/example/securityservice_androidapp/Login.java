@@ -1,5 +1,6 @@
 package com.example.securityservice_androidapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText email_et, password_et;
     private Button signinBtn;
@@ -17,6 +23,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private String email, password;
 
     ValidateEmailPass validateEmailPass ;
+
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -35,6 +43,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         signinBtn.setOnClickListener(this);
         signupBtn.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -58,7 +68,22 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
          password = password_et.getText().toString();
         //TODO : login with email and pass
         if(validateEmailPass.checkEmailValid(email)&& validateEmailPass.checkPasswordValid(password)){
-            Toast.makeText(this,"Success", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this,"Valid Inputs", Toast.LENGTH_SHORT).show();
+            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(Login.this,"Login Success "+email, Toast.LENGTH_SHORT).show();
+                        //redirect to user acc
+                        Intent intent = new Intent(Login.this, UserAccount.class);
+                        startActivity(intent);                    }
+                    else{
+                        Toast.makeText(Login.this,"Login error "+task.getException(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            });
+
         }
 
 

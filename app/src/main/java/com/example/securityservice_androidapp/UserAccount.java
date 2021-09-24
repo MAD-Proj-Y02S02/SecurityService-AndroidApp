@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -14,14 +15,21 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+=======
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+>>>>>>> parent of 031fc11 (Merge pull request #8 from MAD-Proj-Y02S02/chamath)
 
 public class UserAccount extends AppCompatActivity implements View.OnClickListener {
 
     TextView welcometext;
     Button logout;
     FirebaseAuth firebaseAuth;
+<<<<<<< HEAD
     FirebaseFirestore fStore;
 
+=======
+>>>>>>> parent of 031fc11 (Merge pull request #8 from MAD-Proj-Y02S02/chamath)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,7 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+<<<<<<< HEAD
         fStore = FirebaseFirestore.getInstance();
 
         DocumentReference documentReference = fStore.collection("Security").document(user.getUid());
@@ -52,6 +61,12 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
 
 
 
+=======
+        welcometext.setText("Hi "+user.getEmail()+" !");
+
+        logout.setOnClickListener(this);
+
+>>>>>>> parent of 031fc11 (Merge pull request #8 from MAD-Proj-Y02S02/chamath)
     }
 
     @Override
