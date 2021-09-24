@@ -10,5 +10,6 @@
 <!--binath's-->
     <color name="lightGreen">#FF2ADB84</color>
     <color name="buttonBlue">#FF00A8F4</color>
+    <color name="buttonBlueDark">#FF0580B8</color>
     <color name="cyan">#FF00DFC9</color>
 </resources>
