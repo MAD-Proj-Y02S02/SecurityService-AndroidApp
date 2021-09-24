@@ -1,34 +1,34 @@
 package com.example.securityservice_androidapp;
 
 public class Security {
-    public String fname, lname, mobile, NIC, email;
+    public String fName, lName, mobile, nic, email;
 
     public Security(){
 
     }
-    public Security(String fname,String lname,String mobile,String NIC ,String email){
-        this.fname = fname;
-        this.lname = lname;
+    public Security(String fName,String lName,String mobile,String nic ,String email){
+        this.fName = fName;
+        this.lName = lName;
         this.mobile = mobile;
-        this.NIC = NIC;
+        this.nic = nic;
         this.email = email;
 
     }
 
-    public String getFname() {
-        return fname;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public String getMobile() {
@@ -40,11 +40,11 @@ public class Security {
     }
 
     public String getNIC() {
-        return NIC;
+        return nic;
     }
 
-    public void setNIC(String NIC) {
-        this.NIC = NIC;
+    public void setNIC(String nic) {
+        this.nic = nic;
     }
 
     public String getEmail() {

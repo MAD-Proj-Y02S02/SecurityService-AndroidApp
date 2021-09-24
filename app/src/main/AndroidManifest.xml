@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+            android:name=".AdminViewAllGuards"
+            android:exported="true" />
+        <activity
             android:name=".UserAccount"
             android:exported="true" />
         <activity
@@ -33,7 +36,7 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:theme="@style/Theme.SecurityServiceAndroidAppNoActionBar"/>
+            android:theme="@style/Theme.SecurityServiceAndroidAppNoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

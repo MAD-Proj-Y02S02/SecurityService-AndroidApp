@@ -73,6 +73,7 @@ public class Signup extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
 
+
     }
 
 
@@ -154,10 +155,10 @@ public class Signup extends AppCompatActivity {
         userID = fUser.getUid();
         DocumentReference documentReference = fStore.collection("Security").document(userID);
         Map<String,Object> user = new HashMap<>();
-        user.put("fName",security.fname);
-        user.put("lName",security.lname);
+        user.put("fName",security.fName);
+        user.put("lName",security.lName);
         user.put("mobile",security.mobile);
-        user.put("nic",security.NIC);
+        user.put("nic",security.nic);
         user.put("email",security.email);
         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -172,13 +173,15 @@ public class Signup extends AppCompatActivity {
         });
     }
 
-    //tried adding to firebase db
+//    tried adding to firebase db
 //    private void addToDatabase(FirebaseUser user, Security security) {
-//        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+//        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://securityserviceapp-default-rtdb.asia-southeast1.firebasedatabase.app");
 //        DatabaseReference rootReference = firebaseDatabase.getReference();
 //
-//        DatabaseReference nameReference = rootReference.child("Users").child(user.getUid()).child("name");
-//        nameReference.setValue(fname);
+//        DatabaseReference nameReference = rootReference.child("Users").child(user.getUid());
+//        nameReference.setValue(security);
+//                        Toast.makeText(Signup.this,"FStore success", Toast.LENGTH_SHORT).show();
+//
 //    }
 
 }
