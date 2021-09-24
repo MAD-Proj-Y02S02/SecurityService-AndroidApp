@@ -53,6 +53,7 @@
         android:layout_marginTop="88dp"
         android:onClick="onClick"
         android:text="Sign in!"
+        android:backgroundTint="@color/buttonBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +68,7 @@
         android:onClick="onClick"
         android:text="Click here to sign up!"
         android:textSize="8dp"
+        android:backgroundTint="@color/buttonBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
