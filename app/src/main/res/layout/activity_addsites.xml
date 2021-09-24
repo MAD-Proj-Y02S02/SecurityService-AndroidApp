@@ -67,7 +67,7 @@
         android:layout_height="52dp"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textPersonName"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
