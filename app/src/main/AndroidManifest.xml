@@ -10,12 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+            android:name=".View_All_Invoices"
+            android:exported="true" />
+        <activity
+            android:name=".AdminAssignSites"
+            android:exported="true" />
+        <activity
+            android:name=".adminHomePage"
+            android:exported="true" />
+        <activity
             android:name=".MyProfile"
             android:exported="true" />
         <activity
             android:name=".view"
             android:exported="true" />
-
         <activity
             android:name=".AdminViewAllGuards"
             android:exported="true" />
