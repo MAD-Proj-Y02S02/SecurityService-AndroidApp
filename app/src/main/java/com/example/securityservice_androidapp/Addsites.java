@@ -2,6 +2,8 @@ package com.example.securityservice_androidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Service;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,13 +16,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Addsites extends AppCompatActivity  implements View.OnClickListener{
 
-    EditText txtName, txtOwner, txtAddress, txtNumber;
-    Button addBtn;
+    EditText siteName, siteOwner, siteAddress, siteNumber;
+    Button addBtn,viewallsitesBtn;
 
     Sites obSite;
 
     DatabaseReference db;
-
 
 
     @Override
@@ -28,12 +29,13 @@ public class Addsites extends AppCompatActivity  implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addsites);
 
-        txtName = findViewById(R.id.name_site);
-        txtOwner = findViewById(R.id.owner_site);
-        txtNumber = findViewById(R.id.number_site);
-        txtAddress = findViewById(R.id.address_site);
+        siteName = findViewById(R.id.name_site);
+        siteOwner = findViewById(R.id.owner_site);
+        siteNumber = findViewById(R.id.number_site);
+        siteAddress = findViewById(R.id.address_site);
 
         addBtn = findViewById(R.id.add_btn);
+        viewallsitesBtn = findViewById(R.id.viewallsites_btn);
 
 
         obSite = new Sites();
@@ -47,27 +49,31 @@ public class Addsites extends AppCompatActivity  implements View.OnClickListener
             case R.id.add_btn:
                 Add();
                 break;
+            case R.id.viewallsites_btn:
+                Intent intent = new Intent(this, view.class);
+                startActivity(intent);
         }
     }
 
 
     public void Add ( ){
-        db = FirebaseDatabase.getInstance().getReference().child("Sites");
+        db = FirebaseDatabase.getInstance("https://securityserviceapp-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("Sites");
 
         try {
-            if(TextUtils.isEmpty(txtName.getText().toString().trim())){
+            if(TextUtils.isEmpty(siteName.getText().toString().trim())){
                 Toast.makeText(getApplicationContext(), "Please enter the site name", Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty((txtOwner.getText().toString().trim()))) {
+            } else if (TextUtils.isEmpty((siteOwner.getText().toString().trim()))) {
                 Toast.makeText(getApplicationContext(), "Please enter the owner name", Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty((txtNumber.getText().toString().trim()))) {
+            } else if (TextUtils.isEmpty((siteNumber.getText().toString().trim()))) {
                 Toast.makeText(getApplicationContext(), "Please enter the site Number", Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty((txtAddress.getText().toString().trim()))) {
+            } else if (TextUtils.isEmpty((siteAddress.getText().toString().trim()))) {
                 Toast.makeText(getApplicationContext(), "Please enter the site Address", Toast.LENGTH_LONG).show();
             } else {
-                obSite.setSiteName(txtName.getText().toString().trim());
-                obSite.setSiteOwner(txtOwner.getText().toString().trim());
-                obSite.setSiteNumber(txtNumber.getText().toString().trim());
-                obSite.getSiteAddress(txtAddress.getText().toString().trim());
+                obSite.setSiteName(siteName.getText().toString().trim());
+                obSite.setSiteOwner(siteOwner.getText().toString().trim());
+                obSite.setSiteNumber(siteNumber.getText().toString().trim());
+                obSite.setSiteAddress(siteAddress.getText().toString().trim());
+
 
                 db.push().setValue(obSite);
                 Toast.makeText(getApplicationContext(), "sucessfully inserted", Toast.LENGTH_LONG).show();
@@ -76,6 +82,11 @@ public class Addsites extends AppCompatActivity  implements View.OnClickListener
 
         } catch(NumberFormatException e){
             Toast.makeText(getApplicationContext(),"Number format exception", Toast.LENGTH_LONG) .show();
+        }
+
+        catch (Exception ex)
+        {
+            Toast.makeText(getApplicationContext(),"exception", Toast.LENGTH_LONG) .show();
         }
 
     }

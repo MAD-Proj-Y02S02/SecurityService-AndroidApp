@@ -52,6 +52,7 @@ public class AdminViewAllGuards extends AppCompatActivity {
                         for(DocumentChange dc: value.getDocumentChanges()){
                             if(dc.getType()==DocumentChange.Type.ADDED){
                                 securityArrayList.add(dc.getDocument().toObject(Security.class));
+
                             }
                             securityAdapter.notifyDataSetChanged();
                         }

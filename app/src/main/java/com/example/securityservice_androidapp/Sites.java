@@ -30,9 +30,15 @@ public class Sites {
         return siteNumber;
     }
 
-    public String getSiteAddress(String trim) {
+    public String getSiteAddress() {
         return siteAddress;
     }
+
+
+
+//    public String getSiteAddress(String trim) {
+//        return siteAddress;
+//    }
 
     public void setSiteName(String siteName) {
         this.siteName = siteName;
@@ -46,7 +52,7 @@ public class Sites {
         this.siteNumber = siteNumber;
     }
 
-    public void setSiteAddress(String siteAddress) {
+    public void setSiteAddress (String siteAddress) {
         this.siteAddress = siteAddress;
     }
 }
