@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(this, RevenueDash.class);
                 startActivity(intent3);
                 break;
+            case R.id.viewSec_btn:
+                Intent intent4 = new Intent(this, AdminViewAllGuards.class);
+                startActivity(intent4);
+
 
         }
 
