@@ -15,3 +15,10 @@
 local.properties
 .idea/misc.xml
 .idea/deploymentTargetDropDown.xml
+.idea/misc.xml
+.project
+app/.classpath
+app/.settings/org.eclipse.buildship.core.prefs
+.settings/org.eclipse.buildship.core.prefs
+.idea/.name
+.idea/misc.xml
