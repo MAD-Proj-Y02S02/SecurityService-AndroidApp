@@ -24,6 +24,14 @@ public class adminHomePage extends AppCompatActivity {
                 Intent intent = new Intent(this, RevenueDash.class);
                 startActivity(intent);
                 break;
+            case R.id.btnMngSecGuard:
+                Intent intent2 = new Intent(this, AdminViewAllGuards.class);
+                startActivity(intent2);
+                break;
+            case R.id.btnMngSite:
+                Intent intent3 = new Intent(this, view.class);
+                startActivity(intent3);
+                break;
 
         }
 
