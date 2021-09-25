@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -56,6 +57,11 @@ public class EditProfile extends AppCompatActivity {
         saveProfileInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(editFname.getText().toString().isEmpty() || editSname.getText().toString().isEmpty() || editPhone.getText().toString().isEmpty() || editNIC.getText().toString().isEmpty()){
+                    Toast.makeText(EditProfile.this, "One or Many fields are empty ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
             }
         });
