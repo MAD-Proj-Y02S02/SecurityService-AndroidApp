@@ -29,7 +29,7 @@ public class adminHomePage extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case R.id.btnMngSite:
-                Intent intent3 = new Intent(this, view.class);
+                Intent intent3 = new Intent(this, Addsites.class);
                 startActivity(intent3);
                 break;
 
