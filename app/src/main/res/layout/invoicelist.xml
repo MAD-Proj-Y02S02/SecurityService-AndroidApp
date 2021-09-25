@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -129,7 +130,8 @@
                 android:text="Amount: "
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
 
             <TextView
                 android:id="@+id/recycleAmount"
@@ -140,8 +142,62 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
+<!--            <TextView-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="&#8942;"-->
+<!--                android:textSize="40sp"-->
+<!--                android:id="@+id/txtOption"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="30dp"-->
+
+<!--                tools:ignore="RtlCompat" />-->
+
+
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/InvoiceDeleteIcon"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="-90dp"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:src="@drawable/bin1" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/InvoiceUpdateIcon"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:src="@drawable/editico2" />-->
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightGreen"
+                android:text="UPDATE"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="-140dp"
+                android:id="@+id/updateBtnID"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#fc4903"
+                android:text="DELETE"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/deleteBtnID"
+                android:textAllCaps="false"/>
+
+
+
+
 
         </LinearLayout>
+
 
     </LinearLayout>
 
