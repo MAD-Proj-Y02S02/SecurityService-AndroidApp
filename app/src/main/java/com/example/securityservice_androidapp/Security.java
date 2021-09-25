@@ -1,7 +1,12 @@
 package com.example.securityservice_androidapp;
 
-public class Security {
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
+
+public class Security implements Serializable {
     public String fName, lName, mobile, nic, email;
+    @Exclude private String ID;
 
     public Security(){
 
@@ -13,6 +18,14 @@ public class Security {
         this.nic = nic;
         this.email = email;
 
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getfName() {

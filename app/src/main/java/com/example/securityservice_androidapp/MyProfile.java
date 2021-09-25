@@ -7,14 +7,17 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,7 +29,7 @@ public class MyProfile extends AppCompatActivity {
     private TextView myprofileText , profileName, profileEmail, profilePhone,profileNIC;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
-    private Button resetpwd , changeProfile;
+    private Button resetpwd , changeProfile, redirectHome, deleteAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class MyProfile extends AppCompatActivity {
 
         resetpwd = findViewById(R.id.pwdReset_btn);
         changeProfile = findViewById(R.id.changeProfile);
+        redirectHome = findViewById(R.id.redirecthome_btn);
+        deleteAccount = findViewById(R.id.deleteacc_btn);
+
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -112,6 +118,66 @@ public class MyProfile extends AppCompatActivity {
                 });
 
                 passwordResetDialog.create().show();
+            }
+        });
+
+
+        //delete an account
+        deleteAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                final AlertDialog.Builder accountDeleteDialog = new AlertDialog.Builder(view.getContext());
+                accountDeleteDialog.setTitle("Are you sure you want to delete account?");
+                accountDeleteDialog.setMessage("This cannot be reverted");
+
+
+                accountDeleteDialog.setPositiveButton("Yes, delete account", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        fStore.collection("Security").document(user.getUid()).delete();
+                        user.delete()
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(MyProfile.this, "User Acc Deleted", Toast.LENGTH_SHORT).show();
+                                            Intent login = new Intent(MyProfile.this, Login.class);
+                                            login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(login);
+
+                                        }else{
+                                            Toast.makeText(MyProfile.this, "User Acc not Deleted", Toast.LENGTH_SHORT).show();
+
+                                        }
+                                    }
+                                });
+
+                    }
+                });
+
+                accountDeleteDialog.setNegativeButton("Do not delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // close
+                    }
+                });
+                accountDeleteDialog.create().show();
+
+
+
+            }
+        });
+
+        redirectHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MyProfile.this, UserAccount.class);
+                startActivity(home);
             }
         });
 

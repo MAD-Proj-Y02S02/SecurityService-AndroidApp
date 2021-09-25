@@ -19,7 +19,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class UserAccount extends AppCompatActivity implements View.OnClickListener {
 
-    TextView welcometext;
+    TextView welcometext, profileWording,profileWordingGuard;
     Button logout, myprofile;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
@@ -30,7 +30,9 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_account);
 
-        welcometext = findViewById(R.id.welcometext);
+//        welcometext = findViewById(R.id.welcometext);
+        profileWording = findViewById(R.id.profileWording);
+        profileWordingGuard = findViewById(R.id.textView21);
         logout = findViewById(R.id.logout_btn);
         myprofile = findViewById(R.id.myprofile_btn);
 
@@ -45,7 +47,9 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                welcometext.setText("Hello " + documentSnapshot.getString("fName")+" ! \uD83D\uDC4B");
+//                welcometext.setText("Hello " + documentSnapshot.getString("fName")+" ! \uD83D\uDC4B");
+                profileWording.setText(documentSnapshot.getString("fName")+" "+documentSnapshot.getString("lName"));
+                profileWordingGuard.setText("Security Guard");
             }
         });
 
@@ -63,7 +67,12 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
         {
             case R.id.logout_btn:
                 firebaseAuth.signOut();
+                Intent home = new Intent(this, Login.class);
+                home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(home);
                 this.finish();
+
                 break;
             case R.id.myprofile_btn:
                 Intent intent = new Intent(this, MyProfile.class);

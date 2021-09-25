@@ -42,11 +42,23 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
         holder.mobile.setText(security.mobile);
         holder.email.setText(security.email);
         holder.nic.setText(security.nic);
+
+        holder.updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(context, AdminUpdateSecurity.class);
+                intent.putExtra("security",security);
+                context.startActivity(intent);
+
+            }
+        });
+
         holder.bTn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, AdminAssignSites.class);
-                context.startActivity(intent);
+                Intent intent2 = new Intent(context, AdminAssignSites.class);
+                context.startActivity(intent2);
             }
         });
 
@@ -62,7 +74,7 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
     public static class SecurityViewHolder extends RecyclerView.ViewHolder{
 
         TextView fname, lname, nic,email,mobile;
-        ImageView bTn;
+        ImageView bTn, updateBtn;
 
         public SecurityViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -73,6 +85,7 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
             email = itemView.findViewById(R.id.email);
             nic = itemView.findViewById(R.id.nic);
             bTn = itemView.findViewById(R.id.delete_btn);
+            updateBtn = itemView.findViewById(R.id.update_btn);
         }
     }
 
