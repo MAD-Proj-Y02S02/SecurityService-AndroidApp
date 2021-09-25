@@ -32,11 +32,11 @@ public class invoiceAdapter extends RecyclerView.Adapter<invoiceAdapter.invoiceV
     public void onBindViewHolder(@NonNull invoiceViewHolder holder, int position) {
 
         InvoiceData invoiceData = list.get(position);
-        holder.RinvoiceID.setText(invoiceData.getRinvoiceID());
-        holder.RsiteName.setText(invoiceData.getRsiteName());
-        holder.RsiteContact.setText(invoiceData.getRsiteContact());
-        holder.RsiteDesc.setText(invoiceData.getRsiteDesc());
-        holder.Ramount.setText(invoiceData.getRamount());
+        holder.RinvoiceID.setText(invoiceData.getInvoiceID());
+        holder.RsiteName.setText(invoiceData.getSiteNameInv());
+        holder.RsiteContact.setText(invoiceData.getSiteContact());
+        holder.RsiteDesc.setText(invoiceData.getSiteDescription());
+        holder.Ramount.setText(invoiceData.getSiteAmount());
 
     }
 

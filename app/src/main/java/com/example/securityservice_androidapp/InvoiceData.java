@@ -2,29 +2,25 @@ package com.example.securityservice_androidapp;
 
 public class InvoiceData {
 
-    String RinvoiceID;
-    String RsiteName;
-    String RsiteContact;
-    String RsiteDesc;
-    String Ramount;
+    String invoiceID, siteNameInv, siteContact, siteDescription, siteAmount;
 
-    public String getRinvoiceID() {
-        return RinvoiceID;
+    public String getInvoiceID() {
+        return invoiceID;
     }
 
-    public String getRsiteName() {
-        return RsiteName;
+    public String getSiteNameInv() {
+        return siteNameInv;
     }
 
-    public String getRsiteContact() {
-        return RsiteContact;
+    public String getSiteContact() {
+        return siteContact;
     }
 
-    public String getRsiteDesc() {
-        return RsiteDesc;
+    public String getSiteDescription() {
+        return siteDescription;
     }
 
-    public String getRamount() {
-        return Ramount;
+    public String getSiteAmount() {
+        return siteAmount;
     }
 }
