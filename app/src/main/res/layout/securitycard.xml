@@ -144,6 +144,11 @@
                     android:layout_width="61dp"
                     android:layout_height="30dp"
                     android:src="@drawable/bin1" />
+                <ImageView
+                    android:id="@+id/update_btn"
+                    android:layout_width="61dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/editico2" />
             </LinearLayout>
         </LinearLayout>
 
