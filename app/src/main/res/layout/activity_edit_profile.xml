@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/editFname"
+        android:id="@+id/editFname_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -23,17 +23,19 @@
         app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
 
     <EditText
-        android:id="@+id/editSname"
-        android:layout_width="367dp"
+        android:id="@+id/editSname_et"
+        android:layout_width="0dp"
+        android:layout_marginStart="24dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Second Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editFname" />
+        app:layout_constraintTop_toBottomOf="@+id/editFname_et" />
 
     <ImageView
         android:id="@+id/profileImageView"
@@ -46,7 +48,7 @@
         app:srcCompat="@drawable/secv2" />
 
     <EditText
-        android:id="@+id/editNIC"
+        android:id="@+id/editNIC_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -56,10 +58,10 @@
         android:hint="NIC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editSname" />
+        app:layout_constraintTop_toBottomOf="@+id/editSname_et" />
 
     <EditText
-        android:id="@+id/editPhone"
+        android:id="@+id/editPhone_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -69,11 +71,11 @@
         android:hint="Phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNIC" />
+        app:layout_constraintTop_toBottomOf="@+id/editNIC_et" />
 
 
     <Button
-        android:id="@+id/saveProfileInfo"
+        android:id="@+id/saveProfileInfo_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="152dp"

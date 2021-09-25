@@ -45,7 +45,7 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                welcometext.setText("hello " + documentSnapshot.getString("fName")+" !");
+                welcometext.setText("Hello " + documentSnapshot.getString("fName")+" ! \uD83D\uDC4B");
             }
         });
 

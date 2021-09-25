@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +29,7 @@ import java.util.Map;
 public class Signup extends AppCompatActivity {
 
     EditText emailET, passwordET,passwordchkET, fnameET, LNameET, mobileET,nicET;
+    TextView signuplogin;
 
     private Button RegisterBtn;
 
@@ -57,6 +59,8 @@ public class Signup extends AppCompatActivity {
         mobileET = findViewById(R.id.mobile_et);
         nicET = findViewById(R.id.nic_et);
 
+
+        signuplogin = findViewById(R.id.signuplogin_btn);
         RegisterBtn = findViewById(R.id.register_btn);
 
 
@@ -71,6 +75,14 @@ public class Signup extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+
+        signuplogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent( Signup.this, Login.class);
+                startActivity(intent1);
+            }
+        });
 
 
 
