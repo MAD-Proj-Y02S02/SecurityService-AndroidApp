@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+            android:name=".ViewCurrentJob"
+            android:exported="true" />
+        <activity
+            android:name=".AssignSitetoSecurity"
+            android:exported="true" />
+        <activity
+            android:name=".AssignSiteSelect"
+            android:exported="true" />
+        <activity
             android:name=".AdminUpdateSecurity"
             android:exported="true" />
         <activity

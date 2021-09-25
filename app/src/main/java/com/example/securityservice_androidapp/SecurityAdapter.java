@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -57,7 +58,8 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
         holder.bTn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(context, AdminAssignSites.class);
+                Intent intent2 = new Intent(context, AssignSiteSelect.class);
+                intent2.putExtra("security",security);
                 context.startActivity(intent2);
             }
         });
@@ -74,7 +76,8 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
     public static class SecurityViewHolder extends RecyclerView.ViewHolder{
 
         TextView fname, lname, nic,email,mobile;
-        ImageView bTn, updateBtn;
+        ImageView updateBtn;
+        Button bTn;
 
         public SecurityViewHolder(@NonNull View itemView) {
             super(itemView);

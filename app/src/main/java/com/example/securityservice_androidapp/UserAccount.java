@@ -19,8 +19,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class UserAccount extends AppCompatActivity implements View.OnClickListener {
 
-    TextView welcometext, profileWording,profileWordingGuard;
-    Button logout, myprofile;
+    TextView welcometext, profileWording,profileWordingGuard,assignStatus_txt;
+    Button logout, myprofile,viewCurrentSite_btn;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
 
@@ -35,6 +35,8 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
         profileWordingGuard = findViewById(R.id.textView21);
         logout = findViewById(R.id.logout_btn);
         myprofile = findViewById(R.id.myprofile_btn);
+        assignStatus_txt = findViewById(R.id.assignStatus_txt);
+        viewCurrentSite_btn = findViewById(R.id.viewCurrentSite_btn);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -50,10 +52,18 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
 //                welcometext.setText("Hello " + documentSnapshot.getString("fName")+" ! \uD83D\uDC4B");
                 profileWording.setText(documentSnapshot.getString("fName")+" "+documentSnapshot.getString("lName"));
                 profileWordingGuard.setText("Security Guard");
+                if(documentSnapshot.getString("currentSite").equals("empty")){
+                    assignStatus_txt.setText("Currently Available");
+                }else{
+                    assignStatus_txt.setText("Assigned to "+documentSnapshot.getString("currentSite"));
+                }
+
+
             }
         });
 
         logout.setOnClickListener(this);
+        viewCurrentSite_btn.setOnClickListener(this);
 
 
 
@@ -77,7 +87,13 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
             case R.id.myprofile_btn:
                 Intent intent = new Intent(this, MyProfile.class);
                 startActivity(intent);
-            break;
+                break;
+            case R.id.viewCurrentSite_btn:
+                Intent intent2 = new Intent(this, ViewCurrentJob.class);
+                startActivity(intent2);
+                break;
+
+
 
         }
     }

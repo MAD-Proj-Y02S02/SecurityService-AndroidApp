@@ -1,12 +1,27 @@
 package com.example.securityservice_androidapp;
 
 
-public class Sites {
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
+
+public class Sites implements Serializable {
 
     private String siteName;
     private String siteOwner;
     private String siteNumber;
     private String siteAddress;
+
+    @Exclude
+    private String SecurityID;
+
+    public String getSecurityID() {
+        return SecurityID;
+    }
+
+    public void setSecurityID(String securityID) {
+        SecurityID = securityID;
+    }
 
     public Sites() {
     }
