@@ -38,11 +38,12 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
     public void onBindViewHolder(@NonNull SecurityAdapter.SecurityViewHolder holder, int position) {
         Security security = securityArrayList.get(position);
 
-        holder.fname.setText(security.fName);
-        holder.lname.setText(security.lName);
+        holder.fname.setText(security.fName +" "+ security.lName);
+
         holder.mobile.setText(security.mobile);
         holder.email.setText(security.email);
         holder.nic.setText(security.nic);
+        holder.assignedSite.setText(security.getCurrentSite());
 
         holder.updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +76,7 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
 
     public static class SecurityViewHolder extends RecyclerView.ViewHolder{
 
-        TextView fname, lname, nic,email,mobile;
+        TextView fname, assignedSite, nic,email,mobile;
         ImageView updateBtn;
         Button bTn;
 
@@ -83,7 +84,7 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
             super(itemView);
 
             fname = itemView.findViewById(R.id.firstName);
-            lname = itemView.findViewById(R.id.lastName);
+            assignedSite = itemView.findViewById(R.id.assignedSite);
             mobile = itemView.findViewById(R.id.mobile);
             email = itemView.findViewById(R.id.email);
             nic = itemView.findViewById(R.id.nic);
