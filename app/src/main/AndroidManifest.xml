@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+            android:name=".AdminUpdateSecurity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.SecurityServiceAndroidAppNoActionBar"/>
+            android:theme="@style/Theme.SecurityServiceAndroidAppNoActionBar" />
         <activity
             android:name=".EditProfile"
             android:exported="true" />
