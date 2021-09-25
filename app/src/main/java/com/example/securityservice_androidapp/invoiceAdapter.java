@@ -1,9 +1,12 @@
 package com.example.securityservice_androidapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +18,8 @@ public class invoiceAdapter extends RecyclerView.Adapter<invoiceAdapter.invoiceV
 
     Context context;
     ArrayList<InvoiceData> list;
+
+
 
     public invoiceAdapter(Context context, ArrayList<InvoiceData> list) {
         this.context = context;
@@ -38,6 +43,8 @@ public class invoiceAdapter extends RecyclerView.Adapter<invoiceAdapter.invoiceV
         holder.RsiteDesc.setText(invoiceData.getSiteDescription());
         holder.Ramount.setText(invoiceData.getSiteAmount());
 
+
+
     }
 
     @Override
@@ -48,6 +55,7 @@ public class invoiceAdapter extends RecyclerView.Adapter<invoiceAdapter.invoiceV
     public static class invoiceViewHolder extends RecyclerView.ViewHolder{
 
         TextView RinvoiceID,RsiteName,RsiteContact,RsiteDesc,Ramount;
+        ImageView delete,update;
 
         public invoiceViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,6 +65,8 @@ public class invoiceAdapter extends RecyclerView.Adapter<invoiceAdapter.invoiceV
             RsiteContact = itemView.findViewById(R.id.recycleSiteContact);
             RsiteDesc = itemView.findViewById(R.id.recycleSiteDesc);
             Ramount = itemView.findViewById(R.id.recycleAmount);
+
+
 
 
         }
