@@ -123,6 +123,11 @@
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/editico" />
+            <ImageView
+                android:id="@+id/deleteSite_btn"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bin1" />
         </LinearLayout>
 
 

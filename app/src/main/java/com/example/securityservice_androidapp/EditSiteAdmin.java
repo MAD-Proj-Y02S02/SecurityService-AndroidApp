@@ -44,7 +44,7 @@ public class EditSiteAdmin extends AppCompatActivity {
 
         editSname = findViewById(R.id.editFname_et);
         editOwner = findViewById(R.id.editSname_et);
-        editAddress = findViewById(R.id.editNIC_et);
+        editAddress = findViewById(R.id.editOwner_et);
         editPhone = findViewById(R.id.editPhone_et);
 
 
@@ -66,10 +66,10 @@ public class EditSiteAdmin extends AppCompatActivity {
                 particularNoteReference.child("siteAddress").setValue(editAddress.getText().toString());
                 particularNoteReference.child("siteOwner").setValue(editOwner.getText().toString());
 
-                particularNoteReference.child("siteNumber").setValue(editPhone.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                particularNoteReference.child("siteNumber").setValue(editPhone.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-
                         if(task.isSuccessful())
                         {
                             Toast.makeText(EditSiteAdmin.this, " updated successfully!", Toast.LENGTH_SHORT).show();
