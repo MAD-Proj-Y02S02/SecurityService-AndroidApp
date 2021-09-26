@@ -1,9 +1,11 @@
 package com.example.securityservice_androidapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +41,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.number.setText(site.getSiteNumber());
         holder.address.setText((site.getSiteAddress()));
 
+        holder.updateSite_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intenEditSite = new Intent(context, EditSiteAdmin.class);
+                intenEditSite.putExtra("site",site);
+                context.startActivity(intenEditSite);
+            }
+        });
+
 
 
 
@@ -52,6 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView site, owner, address, number;
+        ImageView updateSite_btn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             owner = itemView.findViewById(R.id.siteowner_txt);
             address = itemView.findViewById(R.id.address_txt);
             number = itemView.findViewById(R.id.sitecontact_txt);
+            updateSite_btn = itemView.findViewById(R.id.updateSite_btn);
         }
     }
 }

@@ -44,6 +44,7 @@ public class view extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                      Sites site = dataSnapshot.getValue(Sites.class);
+                     site.setSiteID(dataSnapshot.getKey());
                      list.add(site);
 
                 }

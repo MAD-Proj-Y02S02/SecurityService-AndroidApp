@@ -15,6 +15,10 @@ public class Sites implements Serializable {
     @Exclude
     private String SecurityID;
 
+
+    @Exclude
+    private String siteID;
+
     public String getSecurityID() {
         return SecurityID;
     }
@@ -48,6 +52,17 @@ public class Sites implements Serializable {
     public String getSiteAddress() {
         return siteAddress;
     }
+
+
+
+    public String getSiteID() {
+        return siteID;
+    }
+
+    public void setSiteID(String siteID) {
+        this.siteID = siteID;
+    }
+
 
 
 
