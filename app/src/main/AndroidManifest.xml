@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityServiceAndroidApp">
         <activity
+            android:name=".EditSiteAdmin"
+            android:exported="true" />
+        <activity
             android:name=".ViewCurrentJob"
             android:exported="true" />
         <activity
