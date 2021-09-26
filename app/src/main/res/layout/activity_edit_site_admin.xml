@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".EditSiteAdmin">
     <TextView
-        android:id="@+id/editesecuityadmin"
+        android:id="@+id/editSite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
@@ -52,7 +52,7 @@
 
 
     <EditText
-        android:id="@+id/editNIC_et"
+        android:id="@+id/editOwner_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -75,7 +75,7 @@
         android:hint="Phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNIC_et" />
+        app:layout_constraintTop_toBottomOf="@+id/editOwner_et" />
 
 
     <Button
