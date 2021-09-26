@@ -172,6 +172,7 @@ public class Signup extends AppCompatActivity {
         user.put("mobile",security.mobile);
         user.put("nic",security.nic);
         user.put("email",security.email);
+        user.put("currentSite","empty");
         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

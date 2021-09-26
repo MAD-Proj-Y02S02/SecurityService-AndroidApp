@@ -5,7 +5,7 @@ import com.google.firebase.database.Exclude;
 import java.io.Serializable;
 
 public class Security implements Serializable {
-    public String fName, lName, mobile, nic, email;
+    public String fName, lName, mobile, nic, email, currentSite;
     @Exclude private String ID;
 
     public Security(){
@@ -18,6 +18,14 @@ public class Security implements Serializable {
         this.nic = nic;
         this.email = email;
 
+    }
+
+    public String getCurrentSite() {
+        return currentSite;
+    }
+
+    public void setCurrentSite(String currentSite) {
+        this.currentSite = currentSite;
     }
 
     public String getID() {

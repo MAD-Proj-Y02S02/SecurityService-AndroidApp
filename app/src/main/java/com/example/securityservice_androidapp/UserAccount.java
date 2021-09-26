@@ -55,7 +55,7 @@ public class UserAccount extends AppCompatActivity implements View.OnClickListen
                 if(documentSnapshot.getString("currentSite").equals("empty")){
                     assignStatus_txt.setText("Currently Available");
                 }else{
-                    assignStatus_txt.setText("Assigned to "+documentSnapshot.getString("currentSite"));
+                    assignStatus_txt.setText("Occupied");
                 }
 
 
