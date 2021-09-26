@@ -76,6 +76,7 @@ public class SecurityAdapter extends RecyclerView.Adapter<SecurityAdapter.Securi
 
     public static class SecurityViewHolder extends RecyclerView.ViewHolder{
 
+
         TextView fname, assignedSite, nic,email,mobile;
         ImageView updateBtn;
         Button bTn;
