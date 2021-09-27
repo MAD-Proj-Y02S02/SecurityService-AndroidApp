@@ -1,11 +1,12 @@
-Android Mobile Application for a Security Service
+# Android Mobile Application for a Security Service
 
-Created By: 
-  Binath Lakvidu
-  Channuka Devnindu
-  Chamath Wijethilake
+Created By
+- Binath Lakvidu
+- Channuka Devnindu
+- Chamath Wijethilake
  
-Technologies Used:
-  Android Studio
-  Java
-  Firbase Realtime Database
+Built With
+- Java
+- Firbase
+- Android Studio
+
