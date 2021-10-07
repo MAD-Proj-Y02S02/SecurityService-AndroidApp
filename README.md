@@ -7,6 +7,6 @@ Created By
  
 Built With
 - Java
-- Firbase
+- Firebase
 - Android Studio
 
